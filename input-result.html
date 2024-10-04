@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>রেজাল্ট ইনপুট - সাপ্তাহিক মূল‍্যায়ন</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo.jpg">
+    <style>
+        body {
+            font-family: "Noto Serif Bengali", system-ui;
+            background: linear-gradient(to right, #e0f7fa, #80deea);
+            padding: 20px;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: bold;
+            color: #00796b;
+        }
+
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+
+        button {
+            padding: 10px 30px;
+            font-size: 1.2rem;
+            background-color: #00796b;
+            color: white;
+            border: none;
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        #custom-alert {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>রেজাল্ট ইনপুট করুন</h1>
+        <form id="result-form">
+            <label for="batch">ব‍্যাচ</label>
+            <select id="batch" required>
+                <option value="None">ব‍্যাচ সিলেক্ট করুন</option>
+                <option value="batch1">১ম ব‍্যাচ</option>
+                <option value="batch2">২য় ব‍্যাচ</option>
+                <option value="batch3">৩য় ব‍্যাচ</option>
+                <option value="batch4">৪র্থ ব‍্যাচ</option>
+            </select>
+
+            <label for="name">নাম</label>
+            <input type="text" id="name" placeholder="ছাত্র/ছাত্রীর নাম" required>
+
+            <label for="marks">প্রাপ্ত নম্বর</label>
+            <input type="number" id="marks" placeholder="প্রাপ্ত নম্বর" required>
+
+            <label for="comments">মন্তব‍্য</label>
+            <input type="text" id="comments" placeholder="মন্তব‍্য (যদি থাকে)" >
+
+            <button type="submit">সাবমিট</button>
+        </form>
+
+        <!-- Custom Alert -->
+        <div id="custom-alert" class="alert alert-success" style="display: none;">
+            <span id="alert-message"></span>
+            <button id="close-alert" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; মানিক চন্দ্র ধর
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+        import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDVuzE5w57dW6pqrvYvIVR9c9XR9sqkDN4",
+            authDomain: "weeklyevaluation.firebaseapp.com",
+            databaseURL: "https://weeklyevaluation-default-rtdb.firebaseio.com",
+            projectId: "weeklyevaluation",
+            storageBucket: "weeklyevaluation.appspot.com",
+            messagingSenderId: "865170668803",
+            appId: "1:865170668803:web:9804cdc685aadcc9283d36",
+            measurementId: "G-ST6P9PV1WV"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        // Show custom alert
+        function showCustomAlert(message) {
+            const alertBox = document.getElementById('custom-alert');
+            const alertMessage = document.getElementById('alert-message');
+            alertMessage.textContent = message;
+            alertBox.style.display = 'block';
+        }
+
+        // Close alert
+        document.getElementById('close-alert').addEventListener('click', function () {
+            document.getElementById('custom-alert').style.display = 'none';
+        });
+
+        document.getElementById('result-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const batch = document.getElementById('batch').value;
+
+            // Check if a batch is selected
+            if (batch === "None") {
+                showCustomAlert('দয়া করে একটি ব্যাচ সিলেক্ট করুন।');
+                return; // Prevent submission
+            }
+
+            const name = document.getElementById('name').value;
+            const marks = document.getElementById('marks').value;
+            const comments = document.getElementById('comments').value;
+
+            const resultData = {
+                batch,
+                name,
+                marks: convertToBengaliNumbers(marks),
+                comments: comments || null
+            };
+
+            const newResultRef = push(ref(database, 'results'));
+            set(newResultRef, resultData)
+                .then(() => {
+                    console.log('Result submitted successfully');
+                    showCustomAlert('রেজাল্ট সফলভাবে সাবমিট হয়েছে!'); // Use custom alert
+                    document.getElementById('result-form').reset(); // Reset the form fields
+                })
+                .catch(error => {
+                    console.error('Error submitting result: ', error);
+                    showCustomAlert('রেজাল্ট সাবমিট করতে সমস্যা হয়েছে।'); // Use custom alert for error
+                });
+        });
+
+        function convertToBengaliNumbers(num) {
+            const bengaliDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+            return num.toString().split('').map(digit => bengaliDigits[digit]).join('');
+        }
+          // Disable right-click
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      alert("Right-click is disabled!");
+    });
+
+    // Disable common developer tool shortcuts
+    document.addEventListener('keydown', function(e) {
+      // Disable F12 key for developer tools
+      if (e.key === 'F12') {
+        e.preventDefault();
+        alert("Access denied!");
+      }
+      // Disable Ctrl+Shift+I (Inspect)
+      if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+        e.preventDefault();
+        alert("Inspecting is disabled!");
+      }
+      // Disable Ctrl+Shift+C (Element picker)
+      if (e.ctrlKey && e.shiftKey && e.key === 'C') {
+        e.preventDefault();
+        alert("Inspecting is disabled!");
+      }
+      // Disable Ctrl+Shift+J (Console)
+      if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+        e.preventDefault();
+        alert("Access denied!");
+      }
+      // Disable Ctrl+U (View page source)
+      if (e.ctrlKey && e.key === 'u') {
+        e.preventDefault();
+        alert("Viewing source is disabled!");
+      }
+    });
+
+    // Display alert when trying to leave or refresh the page (Ctrl+U opens new source tab)
+    window.onbeforeunload = function () {
+      return "Are you sure you want to leave? Source viewing is restricted!";
+    };
+    </script>
+</body>
+</html>

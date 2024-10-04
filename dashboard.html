@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>সাপ্তাহিক মূল্যায়ন</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo.jpg">
+    <style>
+        body {
+            font-family: "Noto Serif Bengali", system-ui;
+            background: linear-gradient(to right, #e0f7fa, #80deea);
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            color: #00796b;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+            background-color: #00796b; /* Button background color */
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 10px 0;
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+        a:hover {
+            background-color: #004d40; /* Darker shade on hover */
+        }
+        .footer {
+            margin-top: 50px; /* Space above the footer */
+            padding: 20px;
+            color: 00796b;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>সাপ্তাহিক মূল্যায়ন</h1>
+
+    <a href="input-result.html">রেজাল্ট ইনপুট করুন</a>
+    <a href="batch1.html">১ম ব্যাচের রেজাল্ট দেখুন</a>
+    <a href="batch2.html">২য় ব্যাচের রেজাল্ট দেখুন</a>
+    <a href="batch3.html">৩য় ব্যাচের রেজাল্ট দেখুন</a>
+    <a href="batch4.html">৪র্থ ব্যাচের রেজাল্ট দেখুন</a>
+
+    <div class="footer">
+        &copy;মানিক চন্দ্র ধর
+    </div>
+<script>
+        // Disable right-click
+        document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      alert("Right-click is disabled!");
+    });
+
+    // Disable common developer tool shortcuts
+    document.addEventListener('keydown', function(e) {
+      // Disable F12 key for developer tools
+      if (e.key === 'F12') {
+        e.preventDefault();
+        alert("Access denied!");
+      }
+      // Disable Ctrl+Shift+I (Inspect)
+      if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+        e.preventDefault();
+        alert("Inspecting is disabled!");
+      }
+      // Disable Ctrl+Shift+C (Element picker)
+      if (e.ctrlKey && e.shiftKey && e.key === 'C') {
+        e.preventDefault();
+        alert("Inspecting is disabled!");
+      }
+      // Disable Ctrl+Shift+J (Console)
+      if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+        e.preventDefault();
+        alert("Access denied!");
+      }
+      // Disable Ctrl+U (View page source)
+      if (e.ctrlKey && e.key === 'u') {
+        e.preventDefault();
+        alert("Viewing source is disabled!");
+      }
+    });
+
+    // Display alert when trying to leave or refresh the page (Ctrl+U opens new source tab)
+    window.onbeforeunload = function () {
+      return "Are you sure you want to leave? Source viewing is restricted!";
+    };
+</script>
+</body>
+</html>

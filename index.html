@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>সাপ্তাহিক মূল‍্যায়ন</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo.jpg">
+    <style>
+        body {
+            font-family: "Noto Serif Bengali", system-ui;
+            background: linear-gradient(to right, #e0f7fa, #80deea);
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #00796b;
+        }
+        .password-section {
+            margin-top: 50px;
+        }
+        input[type="password"] {
+            padding: 10px;
+            font-size: 1.2rem;
+            border: 1px solid #00796b;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 300px;
+            margin: auto;
+        }
+        button {
+            padding: 10px 30px;
+            font-size: 1.2rem;
+            background-color: #00796b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #555;
+        }
+        /* Custom Alert Styles */
+        .custom-alert {
+            display: none;
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f44336; /* Red background */
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>সাপ্তাহিক মূল‍্যায়ন</h1>
+        <div class="password-section">
+            <p>পাসওয়ার্ড দিন</p>
+            <input type="password" id="password" placeholder="পাসওয়ার্ড লিখুন">
+            <button onclick="checkPassword()">সাবমিট করুন</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; মানিক চন্দ্র ধর
+    </div>
+
+    <div class="custom-alert" id="alert-box">
+        ভুল পাসওয়ার্ড
+    </div>
+
+    <script>
+        const correctPassword = "356@23Qr";
+
+        function checkPassword() {
+            const enteredPassword = document.getElementById('password').value;
+            if (enteredPassword === correctPassword) {
+                localStorage.setItem('loggedIn', 'true');
+                window.location.href = 'dashboard.html';
+            } else {
+                showAlert();
+            }
+        }
+
+        function showAlert() {
+            const alertBox = document.getElementById('alert-box');
+            alertBox.style.display = 'block';
+            setTimeout(() => {
+                alertBox.style.display = 'none';
+            }, 3000); // Alert will disappear after 3 seconds
+        }
+
+        window.onload = function () {
+            if (localStorage.getItem('loggedIn') === 'true') {
+                window.location.href = 'dashboard.html';
+            }
+        }
+            // Disable right-click
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      alert("Right-click is disabled!");
+    });
+
+    // Disable common developer tool shortcuts
+    document.addEventListener('keydown', function(e) {
+      // Disable F12 key for developer tools
+      if (e.key === 'F12') {
+        e.preventDefault();
+        alert("Access denied!");
+      }
+      // Disable Ctrl+Shift+I (Inspect)
+      if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+        e.preventDefault();
+        alert("Inspecting is disabled!");
+      }
+      // Disable Ctrl+Shift+C (Element picker)
+      if (e.ctrlKey && e.shiftKey && e.key === 'C') {
+        e.preventDefault();
+        alert("Inspecting is disabled!");
+      }
+      // Disable Ctrl+Shift+J (Console)
+      if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+        e.preventDefault();
+        alert("Access denied!");
+      }
+      // Disable Ctrl+U (View page source)
+      if (e.ctrlKey && e.key === 'u') {
+        e.preventDefault();
+        alert("Viewing source is disabled!");
+      }
+    });
+
+    // Display alert when trying to leave or refresh the page (Ctrl+U opens new source tab)
+    window.onbeforeunload = function () {
+      return "Are you sure you want to leave? Source viewing is restricted!";
+    };
+    </script>
+</body>
+</html>
