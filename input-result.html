@@ -54,9 +54,21 @@
             z-index: 1000;
             width: 300px;
         }
+        .back a{
+            margin: 0%;
+            padding: 0%;
+            text-align: left;
+            color: #00796b;
+            border: none;
+            transition: color 0.3s;
+            text-decoration: wavy;
+        }
     </style>
 </head>
 <body>
+    <div class="back">
+        <a href="/dashboard">Back to dashboard</a>
+    </div>
     <div class="container">
         <h1>রেজাল্ট ইনপুট করুন</h1>
         <form id="result-form">
@@ -197,11 +209,6 @@
         alert("Viewing source is disabled!");
       }
     });
-
-    // Display alert when trying to leave or refresh the page (Ctrl+U opens new source tab)
-    window.onbeforeunload = function () {
-      return "Are you sure you want to leave? Source viewing is restricted!";
-    };
     </script>
 </body>
 </html>

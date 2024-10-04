@@ -106,7 +106,7 @@
 
         window.onload = function () {
             if (localStorage.getItem('loggedIn') === 'true') {
-                window.location.href = 'dashboard.html';
+                window.location.href = '/dashboard';
             }
         }
             // Disable right-click
@@ -143,11 +143,6 @@
         alert("Viewing source is disabled!");
       }
     });
-
-    // Display alert when trying to leave or refresh the page (Ctrl+U opens new source tab)
-    window.onbeforeunload = function () {
-      return "Are you sure you want to leave? Source viewing is restricted!";
-    };
     </script>
 </body>
 </html>
