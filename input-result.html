@@ -21,8 +21,8 @@
             font-weight: bold;
             color: #00796b;
         }
-                /* Back button styles */
-                .back-btn {
+        
+        .back-btn {
             display: inline-block;
             margin-bottom: 20px;
             font-size: 18px;
@@ -31,9 +31,8 @@
         }
         
         .back-btn:hover {
-            text-decoration: underline; /* Underline effect on hover */
+            text-decoration: underline;
         }
-
 
         input[type="text"], input[type="number"], select {
             width: 100%;
@@ -66,12 +65,23 @@
             right: 20px;
             z-index: 1000;
             width: 300px;
+            display: none;
+        }
+
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
         }
     </style>
 </head>
 <body>
-        <!-- Back Button -->
-        <a href="javascript:history.back()" class="back-btn">&#8592; ফিরে যান</a>
+    <!-- Back Button -->
+    <a href="javascript:history.back()" class="back-btn">&#8592; ফিরে যান</a>
     <div class="container">
         <h1>রেজাল্ট ইনপুট করুন</h1>
         <form id="result-form">
@@ -91,13 +101,13 @@
             <input type="number" id="marks" placeholder="প্রাপ্ত নম্বর" required>
 
             <label for="comments">মন্তব‍্য</label>
-            <input type="text" id="comments" placeholder="মন্তব‍্য (যদি থাকে)" >
+            <input type="text" id="comments" placeholder="মন্তব‍্য (যদি থাকে)">
 
             <button type="submit">সাবমিট</button>
         </form>
 
         <!-- Custom Alert -->
-        <div id="custom-alert" class="alert alert-success" style="display: none;">
+        <div id="custom-alert" class="alert">
             <span id="alert-message"></span>
             <button id="close-alert" class="close" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -109,7 +119,6 @@
         &copy; মানিক চন্দ্র ধর
     </div>
 
-    <script type="module" src="https://weeklyevaluation.vercel.app/weekscript3.js">
-    </script>
+    <script type="module" src="weekscript3.js"></script>
 </body>
 </html>
