@@ -21,6 +21,19 @@
             color: #00796b;
         }
 
+        /* Back button styles */
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #00796b;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            text-decoration: underline; /* Underline effect on hover */
+        }
+
         table {
             width: 100%;
             margin-top: 20px;
@@ -49,26 +62,12 @@
             font-size: 0.9em;
             color: #555;
         }
-
-        .edit-btn, .delete-btn {
-            cursor: pointer;
-        }
-        .back a{
-            margin: 0%;
-            padding: 0%;
-            text-align: left;
-            color: #00796b;
-            border: none;
-            transition: color 0.3s;
-            text-decoration: wavy;
-        }
     </style>
     <title>সাপ্তাহিক মূল‍্যায়ন - ২য় ব্যাচ</title>
 </head>
 <body>
-    <div class="back">
-        <a href="dashboard.html">Back to dashboard</a>
-    </div>
+   <!-- Back Button -->
+      <a href="javascript:history.back()" class="back-btn">&#8592; ফিরে যান</a>
     <h1>সাপ্তাহিক মূল‍্যায়ন - ২য় ব্যাচ</h1>
     <table class="table table-bordered">
         <thead>
