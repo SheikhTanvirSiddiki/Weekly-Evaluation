@@ -21,6 +21,19 @@
             font-weight: bold;
             color: #00796b;
         }
+                /* Back button styles */
+                .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #00796b;
+            text-decoration: none;
+        }
+        
+        .back-btn:hover {
+            text-decoration: underline; /* Underline effect on hover */
+        }
+
 
         input[type="text"], input[type="number"], select {
             width: 100%;
@@ -57,6 +70,8 @@
     </style>
 </head>
 <body>
+        <!-- Back Button -->
+        <a href="javascript:history.back()" class="back-btn">&#8592; ফিরে যান</a>
     <div class="container">
         <h1>রেজাল্ট ইনপুট করুন</h1>
         <form id="result-form">
