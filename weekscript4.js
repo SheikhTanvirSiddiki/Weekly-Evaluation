@@ -44,7 +44,7 @@
             }
             return bengaliNumber; // Return the converted string
         }
-         window.onload = checkLogin
+         window.onload = checkLogin;
         // Fetch results from Firebase
         const fetchResults = () => {
             const resultsRef = ref(db, 'results');
