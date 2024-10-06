@@ -5,8 +5,8 @@
               // Redirect to login page if not logged in
               window.location.href = 'index.html'; // Change 'login.html' to your actual login page URL
           }
-          window.onload = checkLogin;
       }
+      window.onload = checkLogin;
      // Disable right-click
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
