@@ -4,7 +4,7 @@ function checkAuthentication() {
 
   // If not authenticated, redirect to the login page
   if (!isAuthenticated) {
-      window.location.href = "index.html"; // Change this to your login page URL
+      window.location.href = "https://weeklyevaluation.vercel.app/"; // Change this to your login page URL
   }
 }
 
