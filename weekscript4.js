@@ -1,11 +1,4 @@
-                // Function to check if user is logged in
-                function checkLogin() {
-                    const isLoggedIn = sessionStorage.getItem('isLoggedIn'); // Check if user is logged in
-                    if (!isLoggedIn) {
-                        // Redirect to login page if not logged in
-                        window.location.href = 'index.html'; // Change 'login.html' to your actual login page URL
-                    }
-                }
+
         // Import Firebase functions
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
         import { getDatabase, ref, onValue, update, remove } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js";
