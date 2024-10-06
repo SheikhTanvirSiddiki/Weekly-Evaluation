@@ -1,3 +1,13 @@
+// Function to check if the user is already authenticated
+function checkAuthentication() {
+    const isAuthenticated = localStorage.getItem("authenticated");
+
+    // If not authenticated, redirect to the login page
+    if (!isAuthenticated) {
+        window.location.href = "index.html"; // Change this to your login page URL
+    }
+}
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
