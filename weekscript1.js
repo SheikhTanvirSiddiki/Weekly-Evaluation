@@ -26,8 +26,17 @@ function checkPassword() {
 
 // Function to check if the user is already authenticated
 function checkAuthentication() {
-  const isAuthenticated = localStorage.getItem("authenticated");
-    
+    const isAuthenticated = localStorage.getItem("authenticated");
+
+    // If the user is authenticated, redirect them to the protected page
+    if (isAuthenticated === "true") {
+        window.location.href = "dashboard.html"; // Change this to your protected page URL
+    }
+}
+
+// Call the checkAuthentication function to check on page load
+checkAuthentication();
+
 // Disable right-click
 document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
