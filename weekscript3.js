@@ -3,7 +3,7 @@
             const password = sessionStorage.getItem('password'); // Check if password is stored
             if (!password || password !== '356@23Qr') { // Replace '356@23Qr' with your actual password
                 // Redirect to login page if not logged in
-                window.location.href = 'weeklyevaluation.vercel.app'; // Change 'login.html' to your actual login page URL
+                window.location.href = 'https://weeklyevaluation.vercel.app/'; // Change 'login.html' to your actual login page URL
             }
         }
 
