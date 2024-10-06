@@ -1,14 +1,15 @@
 function checkPassword() {
-    const storedPassword = sessionStorage.getItem('password'); // Retrieve stored password
-    const correctPassword = '356@23Qr'; // Correct password
-
+    const storedPassword = sessionStorage.getItem('password');
+    console.log("Stored Password: ", storedPassword); // Debugging line
+    
+    const correctPassword = '356@23Qr';
     if (!storedPassword || storedPassword !== correctPassword) {
-        // Redirect to password page if the password isn't stored or is incorrect
-        window.location.href = 'password.html'; // Change to the actual login page
+        console.log("Redirecting to password.html"); // Debugging line
+        window.location.href = 'password.html';
     }
 }
 
-window.onload = checkPassword; // Call function on page load
+window.onload = checkPassword;
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
