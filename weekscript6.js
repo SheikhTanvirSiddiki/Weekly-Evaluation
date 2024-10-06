@@ -1,1 +1,159 @@
-const l=b;function b(c,d){const e=a();return b=function(f,g){f=f-0x83;let h=e[f];return h;},b(c,d);}(function(c,d){const k=b,e=c();while(!![]){try{const f=parseInt(k(0x9c))/0x1+-parseInt(k(0x9f))/0x2*(parseInt(k(0xaa))/0x3)+-parseInt(k(0x92))/0x4+parseInt(k(0x9e))/0x5*(parseInt(k(0x8d))/0x6)+-parseInt(k(0xb3))/0x7*(-parseInt(k(0x98))/0x8)+parseInt(k(0xbb))/0x9+parseInt(k(0x94))/0xa*(parseInt(k(0x86))/0xb);if(f===d)break;else e['push'](e['shift']());}catch(g){e['push'](e['shift']());}}}(a,0x32952));import{initializeApp}from'https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js';import{getDatabase,ref,onValue,update,remove}from'https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js';const firebaseConfig={'apiKey':'AIzaSyDVuzE5w57dW6pqrvYvIVR9c9XR9sqkDN4','authDomain':l(0xad),'databaseURL':l(0xa9),'projectId':l(0xb8),'storageBucket':l(0xac),'messagingSenderId':l(0xbe),'appId':l(0xb9),'measurementId':l(0xaf)},app=initializeApp(firebaseConfig),db=getDatabase(app);function convertBengaliToEnglish(c){const m=l,d=['০','১','২','৩','৪','৫','৬','৭','৮','৯'];let e='';for(let f of c){const g=d[m(0xa6)](f);e+=g!==-0x1?g:f;}return e;}function convertEnglishToBengali(c){const n=l,d=['0','1','2','3','4','5','6','7','8','9'],e=['০','১','২','৩','৪','৫','৬','৭','৮','৯'];let f='';for(let g of c[n(0x87)]()){const h=d[n(0xa6)](g);f+=h!==-0x1?e[h]:g;}return f;}const fetchResults=()=>{const o=l,c=ref(db,o(0x9a));onValue(c,d=>{const p=o,e=[];d[p(0x8c)](f=>{const q=p,g=f[q(0xa1)](),h=convertBengaliToEnglish(g[q(0x8f)]),i=parseInt(h,0xa);!isNaN(i)&&g[q(0x93)]==='batch3'&&e[q(0x96)]({'id':f['key'],'name':g['name'],'marks':i,'comments':g[q(0xb7)]||''});}),assignRollNumbers(e),displayResults(e);});};function assignRollNumbers(c){const r=l;c['sort']((e,f)=>f['marks']-e[r(0x8f)]);let d=0x1;for(let e=0x0;e<c['length'];e++){e>0x0&&c[e][r(0x8f)]===c[e-0x1][r(0x8f)]?c[e][r(0x9d)]=c[e-0x1]['roll']:(c[e][r(0x9d)]=d,d++);}}function displayResults(c){const s=l,d=document[s(0x9b)](s(0x83));d[s(0xa7)]='',c[s(0x8c)](e=>{const t=s,f=document[t(0xa8)]('tr');f['innerHTML']=t(0x90)+convertEnglishToBengali(e[t(0x9d)])+t(0xa3)+e[t(0xa0)]+t(0xa3)+convertEnglishToBengali(e[t(0x8f)])+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span>'+e[t(0xb7)]+t(0xbd)+e['id']+t(0xb1)+e[t(0xa0)]+t(0xb1)+e['marks']+t(0xb1)+e['comments']+t(0x89)+e['id']+t(0xab),d['appendChild'](f);});}window[l(0xb4)]=(c,d,e,f)=>{const u=l,g=prompt('নতুন\x20নাম\x20লিখুন:',d),h=prompt(u(0xb0),e),i=prompt(u(0x88),f);g!==null&&h!==null&&i!==null&&update(ref(db,u(0xa5)+c),{'name':g,'marks':h,'comments':i})[u(0xb5)](()=>{fetchResults();})[u(0x84)](j=>{const v=u;console['error'](v(0x8a),j);});},window[l(0x99)]=c=>{const w=l;confirm(w(0x97))&&remove(ref(db,w(0xa5)+c))['then'](()=>{fetchResults();})[w(0x84)](d=>{const x=w;console[x(0x91)]('Error\x20deleting\x20result:\x20',d);});},fetchResults(),document['addEventListener'](l(0x95),function(c){const y=l;c[y(0x85)](),alert('Right-click\x20is\x20disabled!');}),document[l(0xbc)](l(0x8b),function(c){const z=l;c[z(0xba)]===z(0xa2)&&(c['preventDefault'](),alert('Access\x20denied!')),c[z(0xb2)]&&c[z(0x8e)]&&c['key']==='I'&&(c[z(0x85)](),alert(z(0xb6))),c[z(0xb2)]&&c[z(0x8e)]&&c[z(0xba)]==='C'&&(c[z(0x85)](),alert(z(0xb6))),c[z(0xb2)]&&c[z(0x8e)]&&c[z(0xba)]==='J'&&(c[z(0x85)](),alert(z(0xae))),c[z(0xb2)]&&c[z(0xba)]==='u'&&(c[z(0x85)](),alert(z(0xa4)));});function a(){const A=['keydown','forEach','26652dYGMKw','shiftKey','marks','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','error','1024300pQXcQK','batch','1090PPtztz','contextmenu','push','আপনি\x20কি\x20সত্যিই\x20মুছতে\x20চান?','1648ElOzDc','deleteResult','results','getElementById','114557arCxjF','roll','15OfKeDC','62036Grsrxf','name','val','F12','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','Viewing\x20source\x20is\x20disabled!','results/','indexOf','innerHTML','createElement','https://weeklyevaluation-default-rtdb.firebaseio.com','33pxRiVO','\x27)\x22>মুছুন</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','weeklyevaluation.appspot.com','weeklyevaluation.firebaseapp.com','Access\x20denied!','G-ST6P9PV1WV','নতুন\x20নম্বর\x20লিখুন:','\x27,\x20\x27','ctrlKey','12481yZyUgR','editResult','then','Inspecting\x20is\x20disabled!','comments','weeklyevaluation','1:865170668803:web:9804cdc685aadcc9283d36','key','2317527VKblsv','addEventListener','</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22edit-btn\x22\x20onclick=\x22editResult(\x27','865170668803','resultsTableBody','catch','preventDefault','5225SnsBEn','toString','নতুন\x20মন্তব্য\x20লিখুন:','\x27)\x22>এডিট</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22delete-btn\x22\x20onclick=\x22deleteResult(\x27','Error\x20updating\x20result:\x20'];a=function(){return A;};return a();}
+                // Function to check if user is logged in
+                function checkLogin() {
+                    const isLoggedIn = sessionStorage.getItem('isLoggedIn'); // Check if user is logged in
+                    if (!isLoggedIn) {
+                        // Redirect to login page if not logged in
+                        window.location.href = 'index.html'; // Change 'login.html' to your actual login page URL
+                    }
+                }
+        // Import Firebase functions
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
+        import { getDatabase, ref, onValue, update, remove } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js";
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDVuzE5w57dW6pqrvYvIVR9c9XR9sqkDN4",
+            authDomain: "weeklyevaluation.firebaseapp.com",
+            databaseURL: "https://weeklyevaluation-default-rtdb.firebaseio.com",
+            projectId: "weeklyevaluation",
+            storageBucket: "weeklyevaluation.appspot.com",
+            messagingSenderId: "865170668803",
+            appId: "1:865170668803:web:9804cdc685aadcc9283d36",
+            measurementId: "G-ST6P9PV1WV"
+        };
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+        // Function to convert Bengali numbers to English numbers
+        function convertBengaliToEnglish(bengaliNumber) {
+            const bengaliDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+            let englishNumber = '';
+            for (let char of bengaliNumber) {
+                const index = bengaliDigits.indexOf(char);
+                englishNumber += (index !== -1) ? index : char; // Add index if it's a Bengali digit
+            }
+            return englishNumber; // Return the converted string
+        }
+        // Function to convert English numbers to Bengali numbers
+        function convertEnglishToBengali(englishNumber) {
+            const englishDigits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+            const bengaliDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+            let bengaliNumber = '';
+            for (let char of englishNumber.toString()) {
+                const index = englishDigits.indexOf(char);
+                bengaliNumber += (index !== -1) ? bengaliDigits[index] : char; // Add Bengali digit if found
+            }
+            return bengaliNumber; // Return the converted string
+        }
+        // Fetch results from Firebase
+        const fetchResults = () => {
+            const resultsRef = ref(db, 'results');
+            onValue(resultsRef, (snapshot) => {
+                const results = [];
+                snapshot.forEach((childSnapshot) => {
+                    const data = childSnapshot.val();
+                    const englishMarks = convertBengaliToEnglish(data.marks);
+                    const marks = parseInt(englishMarks, 10);
+                    if (!isNaN(marks) && data.batch === 'batch3') {
+                        results.push({
+                            id: childSnapshot.key,
+                            name: data.name,
+                            marks: marks,
+                            comments: data.comments || "" // Initialize comments as empty if not present
+                        });
+                    }
+                });
+                // Assign roll numbers and display results
+                assignRollNumbers(results);
+                displayResults(results);
+            });
+        };
+        // Function to calculate and assign roll numbers based on marks
+        function assignRollNumbers(results) {
+            results.sort((a, b) => b.marks - a.marks);
+            let roll = 1;
+            for (let i = 0; i < results.length; i++) {
+                if (i > 0 && results[i].marks === results[i - 1].marks) {
+                    results[i].roll = results[i - 1].roll;
+                } else {
+                    results[i].roll = roll;
+                    roll++;
+                }
+            }
+        }
+        // Function to display results in the table
+        function displayResults(results) {
+            const resultsTableBody = document.getElementById("resultsTableBody");
+            resultsTableBody.innerHTML = ""; // Clear previous results
+            results.forEach(result => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${convertEnglishToBengali(result.roll)}</td>
+                    <td>${result.name}</td>
+                    <td>${convertEnglishToBengali(result.marks)}</td>
+                    <td>
+                        <span>${result.comments}</span>
+                    </td>
+                    <td>
+                        <button class="edit-btn" onclick="editResult('${result.id}', '${result.name}', '${result.marks}', '${result.comments}')">এডিট</button>
+                        <button class="delete-btn" onclick="deleteResult('${result.id}')">মুছুন</button>
+                    </td>
+                `;
+                resultsTableBody.appendChild(row);
+            });
+        }
+        // Function to edit all fields of a result
+        window.editResult = (id, currentName, currentMarks, currentComments) => {
+            const newName = prompt("নতুন নাম লিখুন:", currentName);
+            const newMarks = prompt("নতুন নম্বর লিখুন:", currentMarks);
+            const newComments = prompt("নতুন মন্তব্য লিখুন:", currentComments);
+            if (newName !== null && newMarks !== null && newComments !== null) {
+                update(ref(db, 'results/' + id), {
+                    name: newName,
+                    marks: newMarks,
+                    comments: newComments
+                }).then(() => {
+                    fetchResults(); // Refresh the results after editing
+                }).catch(error => {
+                    console.error("Error updating result: ", error);
+                });
+            }
+        };
+        // Function to delete a result
+        window.deleteResult = (id) => {
+            if (confirm("আপনি কি সত্যিই মুছতে চান?")) {
+                remove(ref(db, 'results/' + id)).then(() => {
+                    fetchResults(); // Refresh the results after deletion
+                }).catch(error => {
+                    console.error("Error deleting result: ", error);
+                });
+            }
+        };
+        // Fetch results on page load
+        fetchResults();
+            // Disable right-click
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+    // Disable common developer tool shortcuts
+    document.addEventListener('keydown', function(e) {
+      // Disable F12 key for developer tools
+      if (e.key === 'F12') {
+        e.preventDefault();;
+      }
+      // Disable Ctrl+Shift+I (Inspect)
+      if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+        e.preventDefault();
+      }
+      // Disable Ctrl+Shift+C (Element picker)
+      if (e.ctrlKey && e.shiftKey && e.key === 'C') {
+        e.preventDefault();
+      }
+      // Disable Ctrl+Shift+J (Console)
+      if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+        e.preventDefault();
+      }
+      // Disable Ctrl+U (View page source)
+      if (e.ctrlKey && e.key === 'u') {
+        e.preventDefault();
+      }
+    });

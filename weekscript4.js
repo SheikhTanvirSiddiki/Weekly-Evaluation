@@ -1,1 +1,159 @@
-const o=s;(function(U,F){const A=s,N=U();while(!![]){try{const X=-parseInt(A(0x1f9))/0x1+parseInt(A(0x202))/0x2+parseInt(A(0x1ee))/0x3+-parseInt(A(0x213))/0x4+parseInt(A(0x204))/0x5*(parseInt(A(0x1fd))/0x6)+-parseInt(A(0x20b))/0x7*(parseInt(A(0x200))/0x8)+parseInt(A(0x1e8))/0x9*(parseInt(A(0x20a))/0xa);if(X===F)break;else N['push'](N['shift']());}catch(C){N['push'](N['shift']());}}}(Y,0xc12f6));import{initializeApp}from'https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js';function Y(){const T=['Error\x20updating\x20result:\x20','G-ST6P9PV1WV','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','contextmenu','error','Error\x20deleting\x20result:\x20','catch','comments','editResult','নতুন\x20মন্তব্য\x20লিখুন:','appendChild','keydown','97965KJHvxF','then','Inspecting\x20is\x20disabled!','innerHTML','Access\x20denied!','\x27)\x22>এডিট</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22delete-btn\x22\x20onclick=\x22deleteResult(\x27','4238403xgjzbt','toString','batch','length','createElement','forEach','\x27)\x22>মুছুন</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','Right-click\x20is\x20disabled!','results/','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span>','https://weeklyevaluation-default-rtdb.firebaseio.com','480170VJUkcg','deleteResult','key','preventDefault','89346qHEeMm','batch1','নতুন\x20নাম\x20লিখুন:','104hRNWnm','weeklyevaluation','876708wBOvBF','roll','275QqpXjn','আপনি\x20কি\x20সত্যিই\x20মুছতে\x20চান?','shiftKey','marks','\x27,\x20\x27','val','920ZqVFwr','631064HTzoVW','ctrlKey','addEventListener','sort','weeklyevaluation.appspot.com','indexOf','results','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','4912592iHkGXs','name','865170668803','</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22edit-btn\x22\x20onclick=\x22editResult(\x27','1:865170668803:web:9804cdc685aadcc9283d36'];Y=function(){return T;};return Y();}import{getDatabase,ref,onValue,update,remove}from'https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js';const firebaseConfig={'apiKey':'AIzaSyDVuzE5w57dW6pqrvYvIVR9c9XR9sqkDN4','authDomain':'weeklyevaluation.firebaseapp.com','databaseURL':o(0x1f8),'projectId':o(0x201),'storageBucket':o(0x20f),'messagingSenderId':o(0x215),'appId':o(0x217),'measurementId':o(0x219)},app=initializeApp(firebaseConfig),db=getDatabase(app);function s(U,F){const N=Y();return s=function(X,C){X=X-0x1e1;let x=N[X];return x;},s(U,F);}function convertBengaliToEnglish(U){const F=['০','১','২','৩','৪','৫','৬','৭','৮','৯'];let N='';for(let X of U){const C=F['indexOf'](X);N+=C!==-0x1?C:X;}return N;}function convertEnglishToBengali(U){const Z=o,F=['0','1','2','3','4','5','6','7','8','9'],N=['০','১','২','৩','৪','৫','৬','৭','৮','৯'];let X='';for(let C of U[Z(0x1ef)]()){const x=F[Z(0x210)](C);X+=x!==-0x1?N[x]:C;}return X;}const fetchResults=()=>{const u=o,U=ref(db,u(0x211));onValue(U,F=>{const M=u,N=[];F[M(0x1f3)](X=>{const I=M,C=X[I(0x209)](),x=convertBengaliToEnglish(C[I(0x207)]),v=parseInt(x,0xa);!isNaN(v)&&C[I(0x1f0)]===I(0x1fe)&&N['push']({'id':X[I(0x1fb)],'name':C[I(0x214)],'marks':v,'comments':C[I(0x1e3)]||''});}),assignRollNumbers(N),displayResults(N);});};function assignRollNumbers(U){const D=o;U[D(0x20e)]((N,X)=>X[D(0x207)]-N[D(0x207)]);let F=0x1;for(let N=0x0;N<U[D(0x1f1)];N++){N>0x0&&U[N][D(0x207)]===U[N-0x1]['marks']?U[N][D(0x203)]=U[N-0x1][D(0x203)]:(U[N][D(0x203)]=F,F++);}}function displayResults(U){const h=o,F=document['getElementById']('resultsTableBody');F[h(0x1eb)]='',U['forEach'](N=>{const m=h,X=document[m(0x1f2)]('tr');X[m(0x1eb)]=m(0x212)+convertEnglishToBengali(N[m(0x203)])+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>'+N['name']+m(0x21a)+convertEnglishToBengali(N[m(0x207)])+m(0x1f7)+N[m(0x1e3)]+m(0x216)+N['id']+m(0x208)+N[m(0x214)]+m(0x208)+N['marks']+m(0x208)+N[m(0x1e3)]+m(0x1ed)+N['id']+m(0x1f4),F[m(0x1e6)](X);});}window[o(0x1e4)]=(U,F,N,X)=>{const W=o,C=prompt(W(0x1ff),F),x=prompt('নতুন\x20নম্বর\x20লিখুন:',N),v=prompt(W(0x1e5),X);C!==null&&x!==null&&v!==null&&update(ref(db,W(0x1f6)+U),{'name':C,'marks':x,'comments':v})['then'](()=>{fetchResults();})[W(0x1e2)](f=>{const w=W;console[w(0x21c)](w(0x218),f);});},window[o(0x1fa)]=U=>{const J=o;confirm(J(0x205))&&remove(ref(db,'results/'+U))[J(0x1e9)](()=>{fetchResults();})[J(0x1e2)](F=>{const b=J;console[b(0x21c)](b(0x1e1),F);});},fetchResults(),document[o(0x20d)](o(0x21b),function(U){const G=o;U[G(0x1fc)](),alert(G(0x1f5));}),document[o(0x20d)](o(0x1e7),function(U){const e=o;U['key']==='F12'&&(U['preventDefault'](),alert(e(0x1ec))),U['ctrlKey']&&U[e(0x206)]&&U['key']==='I'&&(U['preventDefault'](),alert(e(0x1ea))),U[e(0x20c)]&&U[e(0x206)]&&U[e(0x1fb)]==='C'&&(U[e(0x1fc)](),alert('Inspecting\x20is\x20disabled!')),U[e(0x20c)]&&U[e(0x206)]&&U[e(0x1fb)]==='J'&&(U[e(0x1fc)](),alert(e(0x1ec))),U[e(0x20c)]&&U[e(0x1fb)]==='u'&&(U[e(0x1fc)](),alert('Viewing\x20source\x20is\x20disabled!'));});
+                // Function to check if user is logged in
+                function checkLogin() {
+                    const isLoggedIn = sessionStorage.getItem('isLoggedIn'); // Check if user is logged in
+                    if (!isLoggedIn) {
+                        // Redirect to login page if not logged in
+                        window.location.href = 'index.html'; // Change 'login.html' to your actual login page URL
+                    }
+                }
+        // Import Firebase functions
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
+        import { getDatabase, ref, onValue, update, remove } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js";
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDVuzE5w57dW6pqrvYvIVR9c9XR9sqkDN4",
+            authDomain: "weeklyevaluation.firebaseapp.com",
+            databaseURL: "https://weeklyevaluation-default-rtdb.firebaseio.com",
+            projectId: "weeklyevaluation",
+            storageBucket: "weeklyevaluation.appspot.com",
+            messagingSenderId: "865170668803",
+            appId: "1:865170668803:web:9804cdc685aadcc9283d36",
+            measurementId: "G-ST6P9PV1WV"
+        };
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+        // Function to convert Bengali numbers to English numbers
+        function convertBengaliToEnglish(bengaliNumber) {
+            const bengaliDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+            let englishNumber = '';
+            for (let char of bengaliNumber) {
+                const index = bengaliDigits.indexOf(char);
+                englishNumber += (index !== -1) ? index : char; // Add index if it's a Bengali digit
+            }
+            return englishNumber; // Return the converted string
+        }
+        // Function to convert English numbers to Bengali numbers
+        function convertEnglishToBengali(englishNumber) {
+            const englishDigits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+            const bengaliDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+            let bengaliNumber = '';
+            for (let char of englishNumber.toString()) {
+                const index = englishDigits.indexOf(char);
+                bengaliNumber += (index !== -1) ? bengaliDigits[index] : char; // Add Bengali digit if found
+            }
+            return bengaliNumber; // Return the converted string
+        }
+        // Fetch results from Firebase
+        const fetchResults = () => {
+            const resultsRef = ref(db, 'results');
+            onValue(resultsRef, (snapshot) => {
+                const results = [];
+                snapshot.forEach((childSnapshot) => {
+                    const data = childSnapshot.val();
+                    const englishMarks = convertBengaliToEnglish(data.marks);
+                    const marks = parseInt(englishMarks, 10);
+                    if (!isNaN(marks) && data.batch === 'batch1') {
+                        results.push({
+                            id: childSnapshot.key,
+                            name: data.name,
+                            marks: marks,
+                            comments: data.comments || "" // Initialize comments as empty if not present
+                        });
+                    }
+                });
+                // Assign roll numbers and display results
+                assignRollNumbers(results);
+                displayResults(results);
+            });
+        };
+        // Function to calculate and assign roll numbers based on marks
+        function assignRollNumbers(results) {
+            results.sort((a, b) => b.marks - a.marks);
+            let roll = 1;
+            for (let i = 0; i < results.length; i++) {
+                if (i > 0 && results[i].marks === results[i - 1].marks) {
+                    results[i].roll = results[i - 1].roll;
+                } else {
+                    results[i].roll = roll;
+                    roll++;
+                }
+            }
+        }
+        // Function to display results in the table
+        function displayResults(results) {
+            const resultsTableBody = document.getElementById("resultsTableBody");
+            resultsTableBody.innerHTML = ""; // Clear previous results
+            results.forEach(result => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${convertEnglishToBengali(result.roll)}</td>
+                    <td>${result.name}</td>
+                    <td>${convertEnglishToBengali(result.marks)}</td>
+                    <td>
+                        <span>${result.comments}</span>
+                    </td>
+                    <td>
+                        <button class="edit-btn" onclick="editResult('${result.id}', '${result.name}', '${result.marks}', '${result.comments}')">এডিট</button>
+                        <button class="delete-btn" onclick="deleteResult('${result.id}')">মুছুন</button>
+                    </td>
+                `;
+                resultsTableBody.appendChild(row);
+            });
+        }
+        // Function to edit all fields of a result
+        window.editResult = (id, currentName, currentMarks, currentComments) => {
+            const newName = prompt("নতুন নাম লিখুন:", currentName);
+            const newMarks = prompt("নতুন নম্বর লিখুন:", currentMarks);
+            const newComments = prompt("নতুন মন্তব্য লিখুন:", currentComments);
+            if (newName !== null && newMarks !== null && newComments !== null) {
+                update(ref(db, 'results/' + id), {
+                    name: newName,
+                    marks: newMarks,
+                    comments: newComments
+                }).then(() => {
+                    fetchResults(); // Refresh the results after editing
+                }).catch(error => {
+                    console.error("Error updating result: ", error);
+                });
+            }
+        };
+        // Function to delete a result
+        window.deleteResult = (id) => {
+            if (confirm("আপনি কি সত্যিই মুছতে চান?")) {
+                remove(ref(db, 'results/' + id)).then(() => {
+                    fetchResults(); // Refresh the results after deletion
+                }).catch(error => {
+                    console.error("Error deleting result: ", error);
+                });
+            }
+        };
+        // Fetch results on page load
+        fetchResults();
+            // Disable right-click
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+    // Disable common developer tool shortcuts
+    document.addEventListener('keydown', function(e) {
+      // Disable F12 key for developer tools
+      if (e.key === 'F12') {
+        e.preventDefault();;
+      }
+      // Disable Ctrl+Shift+I (Inspect)
+      if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+        e.preventDefault();
+      }
+      // Disable Ctrl+Shift+C (Element picker)
+      if (e.ctrlKey && e.shiftKey && e.key === 'C') {
+        e.preventDefault();
+      }
+      // Disable Ctrl+Shift+J (Console)
+      if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+        e.preventDefault();
+      }
+      // Disable Ctrl+U (View page source)
+      if (e.ctrlKey && e.key === 'u') {
+        e.preventDefault();
+      }
+    });

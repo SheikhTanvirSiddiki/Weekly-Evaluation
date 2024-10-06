@@ -1,1 +1,159 @@
-const q=b;(function(d,e){const p=b,f=d();while(!![]){try{const g=-parseInt(p(0x1cf))/(-0x1ddd+0x1587*0x1+0x857)+-parseInt(p(0x1a9))/(-0xc*-0x1cf+0x25c3+0x1f*-0x1eb)*(parseInt(p(0x1ad))/(-0x204b*0x1+0x1da8+0x2a6))+-parseInt(p(0x1c2))/(0x1*0x2480+0x407*0x1+0x3*-0xd81)+-parseInt(p(0x1ab))/(-0x3*-0x62f+0x4*0x2f+-0x1344)*(-parseInt(p(0x1bf))/(-0x3f4+-0x2248+0x2642))+-parseInt(p(0x1c8))/(-0x224b+0x215f+0xf3)+parseInt(p(0x19d))/(0x452*0x5+-0x24b0*-0x1+0x1*-0x3a42)+-parseInt(p(0x1b1))/(0x8e*-0x1+0x4ed*-0x7+-0x1*-0x2312)*(-parseInt(p(0x185))/(0x67*0x6+0xf6a*0x1+-0x11ca));if(g===e)break;else f['push'](f['shift']());}catch(h){f['push'](f['shift']());}}}(a,0x16d36c+0x57d99*0x3+-0x48b*0x58a));import{initializeApp}from'https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js';import{getDatabase,ref,onValue,update,remove}from'https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js';function b(c,d){const e=a();return b=function(f,g){f=f-(-0x1d37+0x916*0x2+-0x42b*-0x3);let h=e[f];return h;},b(c,d);}const c={};c[q(0x19c)]='AIzaSyDVuzE5w57dW6pqrvYvIVR9c9XR9sqkDN4',c[q(0x194)]='weeklyevaluation.firebaseapp.com',c[q(0x1aa)]=q(0x17f),c[q(0x178)]=q(0x1c7),c[q(0x180)]='weeklyevaluation.appspot.com',c['messagingSenderId']=q(0x177),c['appId']=q(0x195),c[q(0x1bb)]='G-ST6P9PV1WV';const firebaseConfig=c,app=initializeApp(firebaseConfig),db=getDatabase(app);function convertBengaliToEnglish(e){const r=q,f={};f[r(0x1d0)]=function(j,k){return j!==k;};const g=f,h=['০','১','২','৩','৪','৫','৬','৭','৮','৯'];let i='';for(let j of e){const k=h['indexOf'](j);i+=g[r(0x1d0)](k,-(-0x771*0x3+-0x1*0xc73+0x22c7))?k:j;}return i;}function a(){const I=['crtTN','sjrxX','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','LpLHo','XYMer','catch','contextmenu','nTnOG','batch','\x27)\x22>এডিট</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22delete-btn\x22\x20onclick=\x22deleteResult(\x27','authDomain','1:865170668803:web:9804cdc685aadcc9283d36','roll','appendChild','\x27)\x22>মুছুন</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','preventDefault','pnqir','zsmct','apiKey','10123624odSmfx','rgKEz','PUGNY','Error\x20updating\x20result:\x20','Access\x20denied!','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','3|2|1|0|4','xUKzw','XXhjQ','RrVwL','Eiqgh','ZPJzU','246RdPJzb','databaseURL','175cRchtS','Uezit','39747lukCPv','push','vGjvI','\x27,\x20\x27','27829962YsrhKv','নতুন\x20নাম\x20লিখুন:','</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22edit-btn\x22\x20onclick=\x22editResult(\x27','EQTkV','comments','key','OqPXv','YBNyT','cbDHm','zZLDC','measurementId','error','নতুন\x20নম্বর\x20লিখুন:','marks','169146PEZceY','XzPYC','forEach','3127792icKzBo','createElement','shiftKey','results/','results','weeklyevaluation','11897844ogTTFo','YwzJD','editResult','innerHTML','getElementById','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span>','নতুন\x20মন্তব্য\x20লিখুন:','306808vUUClt','ebmOK','dOdMJ','Inspecting\x20is\x20disabled!','chURz','pulfs','addEventListener','865170668803','projectId','toString','indexOf','hjZlZ','lycgT','length','name','https://weeklyevaluation-default-rtdb.firebaseio.com','storageBucket','ctrlKey','kTRgt','deleteResult','then','10SSkWKU','resultsTableBody','batch4','Right-click\x20is\x20disabled!','UTZRc'];a=function(){return I;};return a();}function convertEnglishToBengali(e){const s=q,f={};f['xUKzw']=function(k,l){return k!==l;};const g=f,h=['0','1','2','3','4','5','6','7','8','9'],i=['০','১','২','৩','৪','৫','৬','৭','৮','৯'];let j='';for(let k of e[s(0x179)]()){const l=h[s(0x17a)](k);j+=g[s(0x1a4)](l,-(0x1a7*0xf+-0x1*0x2692+-0xa*-0x161))?i[l]:k;}return j;}const fetchResults=()=>{const t=q,d={'kTRgt':function(f,g){return f(g);},'zsmct':function(f,g,h){return f(g,h);},'UauZH':function(f,g){return f===g;},'ZPJzU':t(0x187),'gOPOR':t(0x1c6),'pnqir':function(f,g,h){return f(g,h);}},e=d[t(0x19b)](ref,db,d['gOPOR']);d[t(0x19a)](onValue,e,f=>{const w=t,g={'XzPYC':function(i,j){const u=b;return d[u(0x182)](i,j);},'RrVwL':function(i,j,k){const v=b;return d[v(0x19b)](i,j,k);},'crtTN':function(i,j){return d['UauZH'](i,j);},'rgKEz':d[w(0x1a8)]},h=[];f['forEach'](i=>{const x=w,j=i['val'](),k=g[x(0x1c0)](convertBengaliToEnglish,j[x(0x1be)]),l=g[x(0x1a6)](parseInt,k,-0x12f2+-0xe*-0x139+0x1de);if(!isNaN(l)&&g[x(0x18a)](j[x(0x192)],g[x(0x19e)])){const m={};m['id']=i[x(0x1b6)],m[x(0x17e)]=j['name'],m[x(0x1be)]=l,m[x(0x1b5)]=j[x(0x1b5)]||'',h[x(0x1ae)](m);}}),d[w(0x182)](assignRollNumbers,h),displayResults(h);});};function assignRollNumbers(e){const y=q,f={};f['EQTkV']=function(j,k){return j>k;},f[y(0x1ac)]=function(j,k){return j===k;},f[y(0x1c9)]=function(j,k){return j-k;};const g=f;e['sort']((j,k)=>k[y(0x1be)]-j[y(0x1be)]);let h=0x1759+0x2684+-0x3ddc;for(let j=-0x2456+-0xde8+0x323e;j<e[y(0x17d)];j++){g[y(0x1b4)](j,-0x20b7+0x911+0x17a6)&&g[y(0x1ac)](e[j][y(0x1be)],e[g['YwzJD'](j,0xd*-0x167+0x1*-0x2335+0x3571)][y(0x1be)])?e[j][y(0x196)]=e[g[y(0x1c9)](j,-0x3*-0x2c5+0x4fa+-0xd48)][y(0x196)]:(e[j][y(0x196)]=h,h++);}}function displayResults(d){const z=q,e={'ugHba':function(g,h){return g(h);},'hjZlZ':z(0x186)},f=document[z(0x1cc)](e[z(0x17b)]);f[z(0x1cb)]='',d[z(0x1c1)](g=>{const A=z,h=document[A(0x1c3)]('tr');h[A(0x1cb)]=A(0x1a2)+convertEnglishToBengali(g[A(0x196)])+A(0x18c)+g[A(0x17e)]+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>'+e['ugHba'](convertEnglishToBengali,g[A(0x1be)])+A(0x1cd)+g['comments']+A(0x1b3)+g['id']+A(0x1b0)+g[A(0x17e)]+'\x27,\x20\x27'+g[A(0x1be)]+A(0x1b0)+g[A(0x1b5)]+A(0x193)+g['id']+A(0x198),f[A(0x197)](h);});}window[q(0x1ca)]=(e,f,g,h)=>{const B=q,i={'dOdMJ':function(m){return m();},'zZLDC':B(0x1a0),'zvoiu':B(0x1b2),'RIXlH':function(m,n,o){return m(n,o);},'nTnOG':B(0x1ce),'Eiqgh':function(m,n){return m!==n;},'yDHnJ':function(m,n){return m!==n;},'XXhjQ':function(m,n,o){return m(n,o);},'VwWJu':function(m,n,o){return m(n,o);},'chURz':function(m,n){return m+n;},'HAnIc':B(0x1c5)},j=prompt(i['zvoiu'],f),k=prompt(B(0x1bd),g),l=i['RIXlH'](prompt,i[B(0x191)],h);if(i[B(0x1a7)](j,null)&&i['yDHnJ'](k,null)&&i['yDHnJ'](l,null)){const m={};m[B(0x17e)]=j,m[B(0x1be)]=k,m[B(0x1b5)]=l,i[B(0x1a5)](update,i['VwWJu'](ref,db,i[B(0x1d3)](i['HAnIc'],e)),m)[B(0x184)](()=>{const C=B;i[C(0x1d1)](fetchResults);})[B(0x18f)](n=>{const D=B;console[D(0x1bc)](i[D(0x1ba)],n);});}},window[q(0x183)]=d=>{const E=q,e={'XYMer':function(f){return f();},'UTZRc':'আপনি\x20কি\x20সত্যিই\x20মুছতে\x20চান?','vGjvI':function(f,g){return f(g);},'GwpGq':function(f,g,h){return f(g,h);},'sjrxX':function(f,g){return f+g;},'pulfs':'results/'};confirm(e[E(0x189)])&&e[E(0x1af)](remove,e['GwpGq'](ref,db,e[E(0x18b)](e[E(0x1d4)],d)))[E(0x184)](()=>{const F=E;e[F(0x18e)](fetchResults);})[E(0x18f)](f=>{console['error']('Error\x20deleting\x20result:\x20',f);});},fetchResults(),document[q(0x176)](q(0x190),function(d){const G=q,f={'LpLHo':function(g,h){return g(h);},'zWkWP':G(0x188)};d[G(0x199)](),f[G(0x18d)](alert,f['zWkWP']);}),document[q(0x176)]('keydown',function(d){const H=q,f={'KqXen':H(0x1a3),'PUGNY':function(i,j){return i===j;},'YBNyT':function(i,j){return i(j);},'lycgT':H(0x1a1),'OqPXv':function(i,j){return i(j);},'qRhah':'F12','cbDHm':function(i,j){return i===j;},'inqMU':function(i,j){return i(j);}},g=f['KqXen']['split']('|');let h=-0x1*0x427+0x577*0x7+0x6*-0x5af;while(!![]){switch(g[h++]){case'0':d['ctrlKey']&&d[H(0x1c4)]&&f['PUGNY'](d['key'],'J')&&(d[H(0x199)](),f[H(0x1b8)](alert,f[H(0x17c)]));continue;case'1':d[H(0x181)]&&d['shiftKey']&&f[H(0x19f)](d['key'],'C')&&(d[H(0x199)](),f[H(0x1b7)](alert,H(0x1d2)));continue;case'2':d[H(0x181)]&&d['shiftKey']&&d[H(0x1b6)]==='I'&&(d['preventDefault'](),f[H(0x1b7)](alert,H(0x1d2)));continue;case'3':d[H(0x1b6)]===f['qRhah']&&(d[H(0x199)](),alert(f[H(0x17c)]));continue;case'4':d[H(0x181)]&&f[H(0x1b9)](d['key'],'u')&&(d[H(0x199)](),f['inqMU'](alert,'Viewing\x20source\x20is\x20disabled!'));continue;}break;}});
+               // Function to check if user is logged in
+               function checkLogin() {
+                const isLoggedIn = sessionStorage.getItem('isLoggedIn'); // Check if user is logged in
+                if (!isLoggedIn) {
+                    // Redirect to login page if not logged in
+                    window.location.href = 'index.html'; // Change 'login.html' to your actual login page URL
+                }
+            }
+     // Import Firebase functions
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
+        import { getDatabase, ref, onValue, update, remove } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js";
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDVuzE5w57dW6pqrvYvIVR9c9XR9sqkDN4",
+            authDomain: "weeklyevaluation.firebaseapp.com",
+            databaseURL: "https://weeklyevaluation-default-rtdb.firebaseio.com",
+            projectId: "weeklyevaluation",
+            storageBucket: "weeklyevaluation.appspot.com",
+            messagingSenderId: "865170668803",
+            appId: "1:865170668803:web:9804cdc685aadcc9283d36",
+            measurementId: "G-ST6P9PV1WV"
+        };
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+        // Function to convert Bengali numbers to English numbers
+        function convertBengaliToEnglish(bengaliNumber) {
+            const bengaliDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+            let englishNumber = '';
+            for (let char of bengaliNumber) {
+                const index = bengaliDigits.indexOf(char);
+                englishNumber += (index !== -1) ? index : char; // Add index if it's a Bengali digit
+            }
+            return englishNumber; // Return the converted string
+        }
+        // Function to convert English numbers to Bengali numbers
+        function convertEnglishToBengali(englishNumber) {
+            const englishDigits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+            const bengaliDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+            let bengaliNumber = '';
+            for (let char of englishNumber.toString()) {
+                const index = englishDigits.indexOf(char);
+                bengaliNumber += (index !== -1) ? bengaliDigits[index] : char; // Add Bengali digit if found
+            }
+            return bengaliNumber; // Return the converted string
+        }
+        // Fetch results from Firebase
+        const fetchResults = () => {
+            const resultsRef = ref(db, 'results');
+            onValue(resultsRef, (snapshot) => {
+                const results = [];
+                snapshot.forEach((childSnapshot) => {
+                    const data = childSnapshot.val();
+                    const englishMarks = convertBengaliToEnglish(data.marks);
+                    const marks = parseInt(englishMarks, 10);
+                    if (!isNaN(marks) && data.batch === 'batch4') {
+                        results.push({
+                            id: childSnapshot.key,
+                            name: data.name,
+                            marks: marks,
+                            comments: data.comments || "" // Initialize comments as empty if not present
+                        });
+                    }
+                });
+                // Assign roll numbers and display results
+                assignRollNumbers(results);
+                displayResults(results);
+            });
+        };
+        // Function to calculate and assign roll numbers based on marks
+        function assignRollNumbers(results) {
+            results.sort((a, b) => b.marks - a.marks);
+            let roll = 1;
+            for (let i = 0; i < results.length; i++) {
+                if (i > 0 && results[i].marks === results[i - 1].marks) {
+                    results[i].roll = results[i - 1].roll;
+                } else {
+                    results[i].roll = roll;
+                    roll++;
+                }
+            }
+        }
+        // Function to display results in the table
+        function displayResults(results) {
+            const resultsTableBody = document.getElementById("resultsTableBody");
+            resultsTableBody.innerHTML = ""; // Clear previous results
+            results.forEach(result => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${convertEnglishToBengali(result.roll)}</td>
+                    <td>${result.name}</td>
+                    <td>${convertEnglishToBengali(result.marks)}</td>
+                    <td>
+                        <span>${result.comments}</span>
+                    </td>
+                    <td>
+                        <button class="edit-btn" onclick="editResult('${result.id}', '${result.name}', '${result.marks}', '${result.comments}')">এডিট</button>
+                        <button class="delete-btn" onclick="deleteResult('${result.id}')">মুছুন</button>
+                    </td>
+                `;
+                resultsTableBody.appendChild(row);
+            });
+        }
+        // Function to edit all fields of a result
+        window.editResult = (id, currentName, currentMarks, currentComments) => {
+            const newName = prompt("নতুন নাম লিখুন:", currentName);
+            const newMarks = prompt("নতুন নম্বর লিখুন:", currentMarks);
+            const newComments = prompt("নতুন মন্তব্য লিখুন:", currentComments);
+            if (newName !== null && newMarks !== null && newComments !== null) {
+                update(ref(db, 'results/' + id), {
+                    name: newName,
+                    marks: newMarks,
+                    comments: newComments
+                }).then(() => {
+                    fetchResults(); // Refresh the results after editing
+                }).catch(error => {
+                    console.error("Error updating result: ", error);
+                });
+            }
+        };
+        // Function to delete a result
+        window.deleteResult = (id) => {
+            if (confirm("আপনি কি সত্যিই মুছতে চান?")) {
+                remove(ref(db, 'results/' + id)).then(() => {
+                    fetchResults(); // Refresh the results after deletion
+                }).catch(error => {
+                    console.error("Error deleting result: ", error);
+                });
+            }
+        };
+        // Fetch results on page load
+        fetchResults();
+            // Disable right-click
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+    // Disable common developer tool shortcuts
+    document.addEventListener('keydown', function(e) {
+      // Disable F12 key for developer tools
+      if (e.key === 'F12') {
+        e.preventDefault();;
+      }
+      // Disable Ctrl+Shift+I (Inspect)
+      if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+        e.preventDefault();
+      }
+      // Disable Ctrl+Shift+C (Element picker)
+      if (e.ctrlKey && e.shiftKey && e.key === 'C') {
+        e.preventDefault();
+      }
+      // Disable Ctrl+Shift+J (Console)
+      if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+        e.preventDefault();
+      }
+      // Disable Ctrl+U (View page source)
+      if (e.ctrlKey && e.key === 'u') {
+        e.preventDefault();
+      }
+    });
