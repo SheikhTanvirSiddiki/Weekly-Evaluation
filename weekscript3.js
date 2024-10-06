@@ -2,7 +2,7 @@
             const isLoggedIn = sessionStorage.getItem('isLoggedIn'); // Check if user is logged in
             if (!isLoggedIn) {
                 // Redirect to login page if not logged in
-                window.location.href = 'login.html'; // Change 'login.html' to your actual login page URL
+                window.location.href = 'https://weeklyevaluation.vercel.app/'; // Change 'login.html' to your actual login page URL
             }
         }
 
