@@ -1,4 +1,4 @@
-        const correctPassword = "356@23Qr";
+        const correctPassword = "356@23Qr"; // Define the correct password
 
         // Function to check password
         function checkPassword() {
@@ -6,7 +6,7 @@
             if (enteredPassword === correctPassword) {
                 // Store login status in localStorage
                 localStorage.setItem('loggedIn', 'true');
-                // Redirect to dashboard
+                // Redirect to the dashboard
                 window.location.href = 'dashboard.html';
             } else {
                 // Show error alert
@@ -27,9 +27,12 @@
         // Check if the user is already logged in on page load
         window.onload = function () {
             if (localStorage.getItem('loggedIn') === 'true') {
-                window.location.href = 'dashboard.html';
+                window.location.href = 'dashboard.html'; // Redirect if logged in
             }
         }
+
+        // Attach the checkPassword function to the login button
+        document.getElementById('login-btn').addEventListener('click', checkPassword);
     // Disable right-click
 document.addEventListener('contextmenu', function(e) {
 e.preventDefault();
