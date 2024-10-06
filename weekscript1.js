@@ -1,41 +1,28 @@
-// Define the correct password
-const correctPassword = "356@23Qr"; // Replace with your actual password
 
-// Function to check the password
-function checkPassword() {
-    const enteredPassword = document.getElementById("password").value;
+    function checkPassword() {
+        const enteredPassword = document.getElementById("password").value;
+        const correctPassword = "356@23Qr";
 
-    // Check if the entered password matches the correct password
-    if (enteredPassword === correctPassword) {
-        // Store the authentication status in localStorage (persists even after browser restarts)
-        localStorage.setItem("authenticated", "true");
-
-        // Redirect to the protected page
-        window.location.href = "dashboard.html"; // Change this to your protected page URL
-    } else {
-        // Show the custom alert for incorrect password
-        const alertBox = document.getElementById("alert-box");
-        alertBox.style.display = "block";
-
-        // Hide the alert after 3 seconds
-        setTimeout(() => {
-            alertBox.style.display = "none";
-        }, 3000);
+        if (enteredPassword === correctPassword) {
+            localStorage.setItem("authenticated", "true");
+            window.location.href = "dashboard.html"; // Update URL as necessary
+        } else {
+            const alertBox = document.getElementById("alert-box");
+            alertBox.style.display = "block";
+            setTimeout(() => {
+                alertBox.style.display = "none";
+            }, 3000);
+        }
     }
-}
 
-// Function to check if the user is already authenticated
-function checkAuthentication() {
-    const isAuthenticated = localStorage.getItem("authenticated");
-
-    // If the user is authenticated, redirect them to the protected page
-    if (isAuthenticated === "true") {
-        window.location.href = "dashboard.html"; // Change this to your protected page URL
-    }
-}
-
-// Call the checkAuthentication function to check on page load
-checkAuthentication();
+    // Example function call on page load
+    window.onload = function() {
+        // Check authentication when the page loads
+        const isAuthenticated = localStorage.getItem("authenticated");
+        if (isAuthenticated === "true") {
+            window.location.href = "dashboard.html";
+        }
+    };
 
 // Disable right-click
 document.addEventListener('contextmenu', function(e) {
