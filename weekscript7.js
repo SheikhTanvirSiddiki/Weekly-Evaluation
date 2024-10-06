@@ -6,7 +6,6 @@
                     window.location.href = 'index.html'; // Change 'login.html' to your actual login page URL
                 }
             }
-            window.onload = checkLogin;
      // Import Firebase functions
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
         import { getDatabase, ref, onValue, update, remove } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js";
