@@ -1,14 +1,16 @@
-        // Function to check if user is logged in
-        function checkLogin() {
-            const password = sessionStorage.getItem('password'); // Check if password is stored
-            if (!password || password !== '356@23Qr') { // Replace '356@23Qr' with your actual password
-                // Redirect to login page if not logged in
-                window.location.href = 'login.html'; // Change 'login.html' to your actual login page URL
+        // Function to check if the correct password is stored
+        function checkPassword() {
+            const storedPassword = sessionStorage.getItem('password');
+            const correctPassword = '356@23Qr';
+
+            if (!storedPassword || storedPassword !== correctPassword) {
+                // Redirect to the password entry page if the password is not set or is incorrect
+                window.location.href = 'password.html'; // Replace with your actual password entry page
             }
         }
 
-        // Call the checkLogin function on page load
-        window.onload = checkLogin;
+        // Call the checkPassword function on page load
+        window.onload = checkPassword;
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 const firebaseConfig = {
