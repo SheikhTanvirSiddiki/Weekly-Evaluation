@@ -53,5 +53,5 @@ e.preventDefault();
 // Disable Ctrl+U (View page source)
 if (e.ctrlKey && e.key === 'u') {
 e.preventDefault();
-}
+  }
 });
