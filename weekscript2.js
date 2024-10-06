@@ -1,4 +1,15 @@
+// Function to check if the user is already authenticated
+function checkAuthentication() {
+  const isAuthenticated = localStorage.getItem("authenticated");
 
+  // If not authenticated, redirect to the login page
+  if (!isAuthenticated) {
+      window.location.href = "index.html"; // Change this to your login page URL
+  }
+}
+
+// Call checkAuthentication on page load for all protected pages
+window.onload = checkAuthentication
      // Disable right-click
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();

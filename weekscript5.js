@@ -1,4 +1,14 @@
-
+function checkAuthentication() {
+    const isAuthenticated = localStorage.getItem("authenticated");
+  
+    // If not authenticated, redirect to the login page
+    if (!isAuthenticated) {
+        window.location.href = "index.html"; // Change this to your login page URL
+    }
+  }
+  
+  // Call checkAuthentication on page load for all protected pages
+  window.onload = checkAuthentication
     // Import Firebase functions
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
         import { getDatabase, ref, onValue, update, remove } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js";

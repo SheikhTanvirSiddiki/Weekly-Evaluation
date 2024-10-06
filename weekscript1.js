@@ -1,35 +1,41 @@
-        const correctPassword = "356@23Qr"; // Define the correct password
+// Define the correct password
+const correctPassword = "356@23Qr"; // Replace with your actual password
 
-        // Function to check password
-        function checkPassword() {
-            const enteredPassword = document.getElementById('password').value;
-            if (enteredPassword === correctPassword) {
-                // Store login status in localStorage
-                localStorage.setItem('loggedIn', 'true');
-                // Redirect to the dashboard
-                window.location.href = 'dashboard.html';
-            } else {
-                // Show error alert
-                showAlert();
-            }
-        }
+// Function to check the password
+function checkPassword() {
+    const enteredPassword = document.getElementById("password").value;
 
-        // Function to show alert
-        function showAlert() {
-            const alertBox = document.getElementById('alert-box');
-            alertBox.style.display = 'block';
-            // Hide alert after 3 seconds
-            setTimeout(() => {
-                alertBox.style.display = 'none';
-            }, 3000);
-        }
+    // Check if the entered password matches the correct password
+    if (enteredPassword === correctPassword) {
+        // Store the authentication status in localStorage (persists even after browser restarts)
+        localStorage.setItem("authenticated", "true");
 
-        // Check if the user is already logged in on page load
-        window.onload = function () {
-            if (localStorage.getItem('loggedIn') === 'true') {
-                window.location.href = 'dashboard.html'; // Redirect if logged in
-            }
-        }
+        // Redirect to the protected page
+        window.location.href = "dashboard.html"; // Change this to your protected page URL
+    } else {
+        // Show the custom alert for incorrect password
+        const alertBox = document.getElementById("alert-box");
+        alertBox.style.display = "block";
+
+        // Hide the alert after 3 seconds
+        setTimeout(() => {
+            alertBox.style.display = "none";
+        }, 3000);
+    }
+}
+
+// Function to check if the user is already authenticated
+function checkAuthentication() {
+    const isAuthenticated = localStorage.getItem("authenticated");
+
+    // If not authenticated, redirect to the login page
+    if (!isAuthenticated) {
+        window.location.href = "index.html"; // Change this to your login page URL
+    }
+}
+
+// Call checkAuthentication on page load for all protected pages
+window.onload = checkAuthentication;
 
         // Attach the checkPassword function to the login button
         document.getElementById('login-btn').addEventListener('click', checkPassword);
