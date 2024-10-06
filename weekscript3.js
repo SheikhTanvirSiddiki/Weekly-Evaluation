@@ -1,15 +1,3 @@
-function checkPassword() {
-    const storedPassword = sessionStorage.getItem('password');
-    console.log("Stored Password: ", storedPassword); // Debugging line
-    
-    const correctPassword = '356@23Qr';
-    if (!storedPassword || storedPassword !== correctPassword) {
-        console.log("Redirecting to password.html"); // Debugging line
-        window.location.href = 'password.html';
-    }
-}
-
-window.onload = checkPassword;
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
