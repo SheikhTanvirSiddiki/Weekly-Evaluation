@@ -1,6 +1,6 @@
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+
 const firebaseConfig = {
     apiKey: "AIzaSyDVuzE5w57dW6pqrvYvIVR9c9XR9sqkDN4",
     authDomain: "weeklyevaluation.firebaseapp.com",
@@ -11,76 +11,98 @@ const firebaseConfig = {
     appId: "1:865170668803:web:9804cdc685aadcc9283d36",
     measurementId: "G-ST6P9PV1WV"
 };
+
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
+
 // Show custom alert
-function showCustomAlert(message) {
+function showCustomAlert(message, isSuccess) {
     const alertBox = document.getElementById('custom-alert');
     const alertMessage = document.getElementById('alert-message');
+
     alertMessage.textContent = message;
+
+    // Set alert class based on success or error
+    if (isSuccess) {
+        alertBox.classList.remove('alert-danger'); // Remove error class
+        alertBox.classList.add('alert-success'); // Add success class
+    } else {
+        alertBox.classList.remove('alert-success'); // Remove success class
+        alertBox.classList.add('alert-danger'); // Add error class
+    }
+
     alertBox.style.display = 'block';
 }
+
 // Close alert
 document.getElementById('close-alert').addEventListener('click', function () {
     document.getElementById('custom-alert').style.display = 'none';
 });
+
 document.getElementById('result-form').addEventListener('submit', function (e) {
     e.preventDefault();
     const batch = document.getElementById('batch').value;
+
     // Check if a batch is selected
     if (batch === "None") {
-        showCustomAlert('দয়া করে একটি ব্যাচ সিলেক্ট করুন।');
+        showCustomAlert('দয়া করে একটি ব্যাচ সিলেক্ট করুন।', false);
         return; // Prevent submission
     }
+
     const name = document.getElementById('name').value;
     const marks = document.getElementById('marks').value;
     const comments = document.getElementById('comments').value;
+
     const resultData = {
         batch,
         name,
         marks: convertToBengaliNumbers(marks),
         comments: comments || null
     };
+
     const newResultRef = push(ref(database, 'results'));
     set(newResultRef, resultData)
         .then(() => {
             console.log('Result submitted successfully');
-            showCustomAlert('রেজাল্ট সফলভাবে সাবমিট হয়েছে!'); // Use custom alert
+            showCustomAlert('রেজাল্ট সফলভাবে সাবমিট হয়েছে!', true); // Show success alert
             document.getElementById('result-form').reset(); // Reset the form fields
         })
         .catch(error => {
             console.error('Error submitting result: ', error);
-            showCustomAlert('রেজাল্ট সাবমিট করতে সমস্যা হয়েছে।'); // Use custom alert for error
+            showCustomAlert('রেজাল্ট সাবমিট করতে সমস্যা হয়েছে।', false); // Show error alert
         });
 });
+
 function convertToBengaliNumbers(num) {
     const bengaliDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
     return num.toString().split('').map(digit => bengaliDigits[digit]).join('');
 }
-  // Disable right-click
+
+// Disable right-click
 document.addEventListener('contextmenu', function(e) {
-e.preventDefault();
+    e.preventDefault();
 });
+
 // Disable common developer tool shortcuts
 document.addEventListener('keydown', function(e) {
-// Disable F12 key for developer tools
-if (e.key === 'F12') {
-e.preventDefault();
-}
-// Disable Ctrl+Shift+I (Inspect)
-if (e.ctrlKey && e.shiftKey && e.key === 'I') {
-e.preventDefault();
-}
-// Disable Ctrl+Shift+C (Element picker)
-if (e.ctrlKey && e.shiftKey && e.key === 'C') {
-e.preventDefault();
-}
-// Disable Ctrl+Shift+J (Console)
-if (e.ctrlKey && e.shiftKey && e.key === 'J') {
-e.preventDefault();
-}
-// Disable Ctrl+U (View page source)
-if (e.ctrlKey && e.key === 'u') {
-e.preventDefault();
-}
+    // Disable F12 key for developer tools
+    if (e.key === 'F12') {
+        e.preventDefault();
+    }
+    // Disable Ctrl+Shift+I (Inspect)
+    if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+        e.preventDefault();
+    }
+    // Disable Ctrl+Shift+C (Element picker)
+    if (e.ctrlKey && e.shiftKey && e.key === 'C') {
+        e.preventDefault();
+    }
+    // Disable Ctrl+Shift+J (Console)
+    if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+        e.preventDefault();
+    }
+    // Disable Ctrl+U (View page source)
+    if (e.ctrlKey && e.key === 'u') {
+        e.preventDefault();
+    }
 });
