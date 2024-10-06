@@ -1,25 +1,35 @@
-const correctPassword = "356@23Qr";
-function checkPassword() {
-    const enteredPassword = document.getElementById('password').value;
-    if (enteredPassword === correctPassword) {
-        localStorage.setItem('loggedIn', 'true');
-        window.location.href = 'dashboard.html';
-    } else {
-        showAlert();
-    }
-}
-function showAlert() {
-    const alertBox = document.getElementById('alert-box');
-    alertBox.style.display = 'block';
-    setTimeout(() => {
-        alertBox.style.display = 'none';
-    }, 3000); // Alert will disappear after 3 seconds
-}
-window.onload = function () {
-    if (localStorage.getItem('loggedIn') === 'true') {
-        window.location.href = 'dashboard.html';
-    }
-}
+        const correctPassword = "356@23Qr";
+
+        // Function to check password
+        function checkPassword() {
+            const enteredPassword = document.getElementById('password').value;
+            if (enteredPassword === correctPassword) {
+                // Store login status in localStorage
+                localStorage.setItem('loggedIn', 'true');
+                // Redirect to dashboard
+                window.location.href = 'dashboard.html';
+            } else {
+                // Show error alert
+                showAlert();
+            }
+        }
+
+        // Function to show alert
+        function showAlert() {
+            const alertBox = document.getElementById('alert-box');
+            alertBox.style.display = 'block';
+            // Hide alert after 3 seconds
+            setTimeout(() => {
+                alertBox.style.display = 'none';
+            }, 3000);
+        }
+
+        // Check if the user is already logged in on page load
+        window.onload = function () {
+            if (localStorage.getItem('loggedIn') === 'true') {
+                window.location.href = 'dashboard.html';
+            }
+        }
     // Disable right-click
 document.addEventListener('contextmenu', function(e) {
 e.preventDefault();
