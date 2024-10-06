@@ -1,14 +1,4 @@
-        // Function to check if user is logged in
-        function checkLogin() {
-            const password = sessionStorage.getItem('password'); // Check if password is stored
-            if (!password || password !== '356@23Qr') { // Replace '356@23Qr' with your actual password
-                // Redirect to login page if not logged in
-                window.location.href = 'https://weeklyevaluation.vercel.app/'; // Change 'login.html' to your actual login page URL
-            }
-        }
 
-        // Call the checkLogin function on page load
-        window.onload = checkLogin;
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 const firebaseConfig = {
