@@ -1,3 +1,6 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+
 // Function to check if the user is already authenticated
 function checkAuthentication() {
     const isAuthenticated = localStorage.getItem("authenticated");
@@ -10,9 +13,6 @@ function checkAuthentication() {
 
 // Call checkAuthentication on page load for all protected pages
 window.onload = checkAuthentication;
-
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDVuzE5w57dW6pqrvYvIVR9c9XR9sqkDN4",
@@ -28,9 +28,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
-document.getElementById("result-form").addEventListener("submit", function(e) {
-    e.preventDefault(); // Prevent the form from submitting in the traditional way
+// Add event listener for the result submission form
+document.getElementById("result-form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent the default form submission
 
+    // Get input values
     const batch = document.getElementById("batch").value;
     const name = document.getElementById("name").value;
     const marks = document.getElementById("marks").value;
@@ -48,15 +50,13 @@ document.getElementById("result-form").addEventListener("submit", function(e) {
     document.getElementById("loader").style.display = "block";
     document.getElementById("main-content").classList.add("loading");
 
-    // Create a reference for the specific batch in the database
-    const resultRef = ref(database, 'results/' + batch);
-
     // Push data to Firebase
+    const resultRef = ref(database, 'results'); // Change to the results collection
     push(resultRef, {
+        batch: batch,
         name: name,
         marks: marks,
-        comments: comments === 'custom' ? customComment : comments,
-        batch: batch // Including the batch value directly in the entry
+        comments: comments === 'custom' ? customComment : comments
     }).then(() => {
         // Hide loader
         document.getElementById("loader-background").style.display = "none";
@@ -85,12 +85,12 @@ function showAlert(message, type) {
 }
 
 // Close alert
-document.getElementById("close-alert").addEventListener("click", function() {
+document.getElementById("close-alert").addEventListener("click", function () {
     document.getElementById("custom-alert").style.display = "none";
 });
 
 // Toggle custom comment input
-document.getElementById("comments").addEventListener("change", function() {
+document.getElementById("comments").addEventListener("change", function () {
     const customCommentInput = document.getElementById("custom-comment");
     if (this.value === "custom") {
         customCommentInput.style.display = "block";
@@ -102,11 +102,11 @@ document.getElementById("comments").addEventListener("change", function() {
 });
 
 // Disable right-click and common developer tools shortcuts
-document.addEventListener('contextmenu', function(e) {
+document.addEventListener('contextmenu', function (e) {
     e.preventDefault(); // Disable right-click context menu
 });
 
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', function (e) {
     // Disable F12, Ctrl+Shift+I, Ctrl+Shift+C, and Ctrl+U
     if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'C')) || (e.ctrlKey && e.key === 'U')) {
         e.preventDefault(); // Disable the keys
