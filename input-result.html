@@ -169,8 +169,13 @@
             <input type="number" id="marks" placeholder="প্রাপ্ত নম্বর" required>
 
             <label for="comments">মন্তব‍্য</label>
-            <input type="text" id="comments" placeholder="মন্তব‍্য (যদি থাকে)">
-
+            <select id="comments">
+                <option value="">মন্তব্য সিলেক্ট করুন (যদি থাকে)</option> <!-- Added this option -->
+                <option value="যৌথভাবে">যৌথভাবে</option>
+                <option value="অকৃতকার্য">অকৃতকার্য</option>
+                <option value="custom">কাস্টম মন্তব্য</option>
+            </select>
+            <input type="text" id="custom-comment" placeholder="কাস্টম মন্তব্য লিখুন" style="display:none;">
             <button type="submit">সাবমিট</button>
         </form>
 

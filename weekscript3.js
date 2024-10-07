@@ -1,5 +1,5 @@
-        // Function to check if the user is already authenticated
-        function checkAuthentication() {
+         // Function to check if the user is already authenticated
+         function checkAuthentication() {
             const isAuthenticated = localStorage.getItem("authenticated");
 
             // If not authenticated, redirect to the login page
@@ -10,7 +10,7 @@
 
         // Call checkAuthentication on page load for all protected pages
         window.onload = checkAuthentication;
-        
+
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
         import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
@@ -21,106 +21,91 @@
             projectId: "weeklyevaluation",
             storageBucket: "weeklyevaluation.appspot.com",
             messagingSenderId: "865170668803",
-            appId: "1:865170668803:web:9804cdc685aadcc9283d36",
-            measurementId: "G-ST6P9PV1WV"
+            appId: "1:865170668803:web:f32d3b76b6d79dfc48046c"
         };
 
+        // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const database = getDatabase(app);
 
-        // Show custom alert
-        function showCustomAlert(message, isSuccess) {
-            const alertBox = document.getElementById('custom-alert');
-            const alertMessage = document.getElementById('alert-message');
+        document.getElementById("result-form").addEventListener("submit", function(e) {
+            e.preventDefault(); // Prevent the form from submitting in the traditional way
 
-            alertMessage.textContent = message;
-
-            // Set alert class based on success or error
-            if (isSuccess) {
-                alertBox.classList.remove('alert-danger'); // Remove error class
-                alertBox.classList.add('alert-success'); // Add success class
-            } else {
-                alertBox.classList.remove('alert-success'); // Remove success class
-                alertBox.classList.add('alert-danger'); // Add error class
-            }
-
-            alertBox.style.display = 'block';
-        }
-
-        // Close alert
-        document.getElementById('close-alert').addEventListener('click', function () {
-            document.getElementById('custom-alert').style.display = 'none';
-        });
-
-        document.getElementById('result-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const batch = document.getElementById('batch').value;
+            const batch = document.getElementById("batch").value;
+            const name = document.getElementById("name").value;
+            const marks = document.getElementById("marks").value;
+            const comments = document.getElementById("comments").value;
+            const customComment = document.getElementById("custom-comment").value;
 
             // Check if a batch is selected
             if (batch === "None") {
-                showCustomAlert('দয়া করে একটি ব্যাচ সিলেক্ট করুন।', false);
+                showAlert('দয়া করে একটি ব্যাচ সিলেক্ট করুন।', 'danger');
                 return; // Prevent submission
             }
 
-            const name = document.getElementById('name').value;
-            const marks = document.getElementById('marks').value;
-            const comments = document.getElementById('comments').value;
+            // Display loader
+            document.getElementById("loader-background").style.display = "block";
+            document.getElementById("loader").style.display = "block";
+            document.getElementById("main-content").classList.add("loading");
 
-            // Show the loader and hide the main content
-            document.getElementById('loader-background').style.display = 'block'; // Show background
-            document.getElementById('loader').style.display = 'block'; // Show loader
-            document.getElementById('main-content').classList.add('loading'); // Hide content
-
-            const resultData = {
-                batch: batch,
+            // Push data to Firebase
+            const resultRef = ref(database, 'results/' + batch);
+            push(resultRef, {
                 name: name,
                 marks: marks,
-                comments: comments
-            };
-
-            // Push data to Firebase database
-            push(ref(database, 'results'), resultData)
-                .then(() => {
-                    showCustomAlert('রেজাল্ট সফলভাবে সাবমিট হয়েছে।', true); // Show success alert
-                    document.getElementById('result-form').reset(); // Reset the form fields
-                })
-                .catch(error => {
-                    console.error('Error submitting result: ', error);
-                    showCustomAlert('রেজাল্ট সাবমিট করতে সমস্যা হয়েছে।', false); // Show error alert
-                })
-                .finally(() => {
-                    // Hide the loader and show the main content
-                    document.getElementById('loader').style.display = 'none';
-                    document.getElementById('loader-background').style.display = 'none'; // Hide background
-                    document.getElementById('main-content').classList.remove('loading'); // Show content again
-                });
+                comments: comments === 'custom' ? customComment : comments
+            }).then(() => {
+                // Hide loader
+                document.getElementById("loader-background").style.display = "none";
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("main-content").classList.remove("loading");
+                showAlert('রেজাল্ট সফলভাবে আপলোড হয়েছে!', 'success');
+                document.getElementById("result-form").reset(); // Reset the form
+            }).catch((error) => {
+                // Hide loader
+                document.getElementById("loader-background").style.display = "none";
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("main-content").classList.remove("loading");
+                showAlert('রেজাল্ট আপলোড করতে সমস্যা হয়েছে: ' + error.message, 'danger');
+            });
         });
 
-        // Disable right-click
+        // Show alert function
+        function showAlert(message, type) {
+            const alertDiv = document.getElementById("custom-alert");
+            alertDiv.className = "alert alert-" + type;
+            document.getElementById("alert-message").innerText = message;
+            alertDiv.style.display = "block";
+            setTimeout(() => {
+                alertDiv.style.display = "none";
+            }, 3000);
+        }
+
+        // Close alert
+        document.getElementById("close-alert").addEventListener("click", function() {
+            document.getElementById("custom-alert").style.display = "none";
+        });
+
+        // Toggle custom comment input
+        document.getElementById("comments").addEventListener("change", function() {
+            const customCommentInput = document.getElementById("custom-comment");
+            if (this.value === "custom") {
+                customCommentInput.style.display = "block";
+                customCommentInput.required = true; // Make custom comment input required
+            } else {
+                customCommentInput.style.display = "none";
+                customCommentInput.required = false; // Remove required attribute
+            }
+        });
+
+        // Disable right-click and common developer tools shortcuts
         document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
+            e.preventDefault(); // Disable right-click context menu
         });
 
-        // Disable common developer tool shortcuts
         document.addEventListener('keydown', function(e) {
-            // Disable F12 key for developer tools
-            if (e.key === 'F12') {
-                e.preventDefault();
-            }
-            // Disable Ctrl+Shift+I (Inspect)
-            if (e.ctrlKey && e.shiftKey && e.key === 'I') {
-                e.preventDefault();
-            }
-            // Disable Ctrl+Shift+C (Element picker)
-            if (e.ctrlKey && e.shiftKey && e.key === 'C') {
-                e.preventDefault();
-            }
-            // Disable Ctrl+Shift+J (Console)
-            if (e.ctrlKey && e.shiftKey && e.key === 'J') {
-                e.preventDefault();
-            }
-            // Disable Ctrl+U (View page source)
-            if (e.ctrlKey && e.key === 'u') {
-                e.preventDefault();
+            // Disable F12, Ctrl+Shift+I, Ctrl+Shift+C, and Ctrl+U
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'C')) || (e.ctrlKey && e.key === 'U')) {
+                e.preventDefault(); // Disable the keys
             }
         });
