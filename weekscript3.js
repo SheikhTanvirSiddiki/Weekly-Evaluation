@@ -62,14 +62,14 @@ document.getElementById("result-form").addEventListener("submit", function (e) {
         document.getElementById("loader-background").style.display = "none";
         document.getElementById("loader").style.display = "none";
         document.getElementById("main-content").classList.remove("loading");
-        showAlert('রেজাল্ট সফলভাবে আপলোড হয়েছে!', 'success');
+        showAlert('রেজাল্ট সফলভাবে সাবমিট হয়েছে!', 'success');
         document.getElementById("result-form").reset(); // Reset the form
     }).catch((error) => {
         // Hide loader
         document.getElementById("loader-background").style.display = "none";
         document.getElementById("loader").style.display = "none";
         document.getElementById("main-content").classList.remove("loading");
-        showAlert('রেজাল্ট আপলোড করতে সমস্যা হয়েছে: ' + error.message, 'danger');
+        showAlert('রেজাল্ট সাবমিট করতে সমস্যা হয়েছে: ' + error.message, 'danger');
     });
 });
 
